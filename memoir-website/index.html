@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMOIR - Your Memory, Your Signature Scent | L'Oréal Luxe</title>
+    <meta name="description" content="Turn your favorite photo into a custom luxury fragrance. AI-powered, perfumer-crafted, sustainably made.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Locomotive Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* Temporary Font Replacements until Futura/Avenir are available */
+        :root {
+            --font-primary: 'Cinzel', serif; /* Luxury replacement for Futura headers */
+            --font-secondary: 'Montserrat', sans-serif; /* Clean replacement for Avenir */
+            --font-accent: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body data-scroll-container>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-logo">MEMOIR</div>
+        <div class="nav-links">
+            <a href="#mission" data-scroll-to>Mission</a>
+            <a href="#how-it-works" data-scroll-to>Process</a>
+            <a href="#product" data-scroll-to>Collection</a>
+            <a href="#gallery" data-scroll-to>Gallery</a>
+        </div>
+        <button class="btn-primary small-btn">Create Your MEMOIR</button>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hero-section" data-scroll-section>
+        <div id="canvas-container"></div> <!-- Container for Three.js -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-scroll data-scroll-speed="-1">
+            <h1 class="display">Every Memory Deserves a Scent</h1>
+            <p class="large">Turn your favorite photo into a custom luxury fragrance</p>
+            <button class="btn-primary" onclick="scrollToSection('#create')">
+                CREATE YOUR MEMOIR
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <span>↓</span>
+        </div>
+    </section>
+
+    <!-- 2. MISSION SECTION -->
+    <section id="mission" class="mission-section" data-scroll-section>
+        <div class="container">
+            <div class="mission-content" data-scroll data-scroll-speed="1">
+                <h2 class="section-title">Where Technology Meets Memory</h2>
+                <p class="tagline">Science serves emotion, and your story becomes your signature scent</p>
+                
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">AI</div>
+                        <h3>AI Technology</h3>
+                        <p>Visual-olfactive mapping powered by AI</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-icon">🥀</div>
+                        <h3>Master Craftsmanship</h3>
+                        <p>Handcrafted by L'Oréal Luxe perfumers</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-icon">📸</div>
+                        <h3>Your Memory</h3>
+                        <p>Every fragrance tells your unique story</p>
+                    </div>
+                </div>
+                <p class="brand-signature">by L'Oréal Luxe</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="process-section dark-section" data-scroll-section>
+        <div class="container">
+            <h2 class="section-title white-text">HOW IT WORKS</h2>
+            <p class="section-subtitle white-text">Your Memory, Three Simple Steps</p>
+            
+            <div class="process-steps">
+                <div class="step-card" data-scroll data-scroll-speed="1">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📤</div>
+                    <h3>Upload Your Photo</h3>
+                    <p>Choose a moment you never want to forget—a vacation, wedding, favorite place</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step-card" data-scroll data-scroll-speed="1.2">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">✨</div>
+                    <h3>We Analyze & Create</h3>
+                    <p>Our AI maps visual elements to scent notes. Master perfumers craft your unique formula.</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step-card" data-scroll data-scroll-speed="1.4">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🎁</div>
+                    <h3>Receive Your MEMOIR</h3>
+                    <p>In 2-3 weeks, your memory arrives beautifully packaged with your photo on the bottle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PRODUCT SHOWCASE SECTION -->
+    <section id="product" class="product-section" data-scroll-section>
+        <div class="product-layout">
+            <div class="product-visual" data-scroll data-scroll-speed="1">
+                <div class="bottle-3d-placeholder">
+                    <!-- 3D Bottle will go here or a high-res image -->
+                    <div class="bottle-mockup">
+                        <div class="bottle-body">
+                            <div class="bottle-label">Your Photo</div>
+                        </div>
+                        <div class="bottle-cap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-details" data-scroll data-scroll-speed="2">
+                <h2 class="section-title">Your Memory, Preserved Forever</h2>
+                <p class="subhead">Premium 30ml Eau de Parfum, handcrafted in France</p>
+                <ul class="specs-list">
+                    <li>Clear glass bottle (shows fragrance liquid)</li>
+                    <li>Personalized photo label with resin overlay</li>
+                    <li>Matte black aluminum cap with gold band</li>
+                    <li>11cm tall, 3.5cm diameter</li>
+                    <li>Gift box included</li>
+                    <li>Refillable (€120 refills)</li>
+                </ul>
+                <div class="price-tag">€220</div>
+                <button class="btn-primary">Create Your MEMOIR</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. AI TECHNOLOGY SECTION -->
+    <section id="technology" class="tech-section" data-scroll-section>
+        <div class="container">
+            <h2 class="section-title">The Science of Scent</h2>
+            <p class="subhead">AI-powered visual-olfactive mapping, perfected by human artistry</p>
+            
+            <div class="tech-demo">
+                <div class="demo-visual">
+                    <div class="demo-photo">Beach Sunset</div>
+                    <div class="demo-arrow">→</div>
+                    <div class="demo-analysis">
+                        <span>• Tropical</span>
+                        <span>• Warm</span>
+                        <span>• Aquatic</span>
+                    </div>
+                    <div class="demo-arrow">→</div>
+                    <div class="demo-formula">
+                        <div class="note top">TOP: Bergamot</div>
+                        <div class="note heart">HEART: Plumeria</div>
+                        <div class="note base">BASE: Driftwood</div>
+                    </div>
+                </div>
+                <p class="credibility">"Trained on 250+ mappings by master perfumers"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SUSTAINABILITY SECTION -->
+    <section id="sustainability" class="sustainability-section green-bg" data-scroll-section>
+        <div class="container">
+            <h2 class="section-title white-text">Made to Last</h2>
+            <p class="tagline white-text">Luxury that endures, for you and the planet</p>
+            
+            <div class="sustain-grid">
+                <div class="sustain-card">
+                    <h3>Refill System</h3>
+                    <p>€120 refills (vs. €220 new bottle). Save 44% glass, 67% plastic waste.</p>
+                </div>
+                <div class="sustain-card">
+                    <h3>Premium Materials</h3>
+                    <p>Clear glass, matte black aluminum cap, resin-sealed label. Made in France.</p>
+                </div>
+            </div>
+            <button class="btn-secondary white-btn">Order Your Refill</button>
+        </div>
+    </section>
+
+    <!-- 7. GALLERY SECTION -->
+    <section id="gallery" class="gallery-section" data-scroll-section>
+        <div class="container">
+            <h2 class="section-title">Memory Gallery</h2>
+            <p class="subhead">Real memories, Real Fragrances</p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Items -->
+                <div class="gallery-item" data-scroll data-scroll-speed="1">
+                    <div class="gallery-img-placeholder" style="background-color: #e0f7fa;">Tropical</div>
+                    <div class="gallery-info">
+                        <h4>Tropical Paradise</h4>
+                        <p>Coconut, Salt, Frangipani</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-scroll data-scroll-speed="1.2">
+                    <div class="gallery-img-placeholder" style="background-color: #e1bee7;">Lavender</div>
+                    <div class="gallery-info">
+                        <h4>Lavender Fields</h4>
+                        <p>Lavender, Hay, Honey</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-scroll data-scroll-speed="1.1">
+                    <div class="gallery-img-placeholder" style="background-color: #212121; color: white;">Urban</div>
+                    <div class="gallery-info">
+                        <h4>Urban Adventure</h4>
+                        <p>Leather, Coffee, Smoke</p>
+                    </div>
+                </div>
+                <!-- More items can be added -->
+            </div>
+            <p class="gallery-footer">"2,847 memories bottled and counting"</p>
+        </div>
+    </section>
+
+    <!-- 8. TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials-section dark-section" data-scroll-section>
+        <div class="container">
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide active">
+                    <blockquote>"This isn't just a fragrance—it's my story in a bottle. Every time I wear it, I'm back on that beach with my husband."</blockquote>
+                    <cite>— Maria, Barcelona ("Bali Honeymoon" MEMOIR)</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. PRICING SECTION -->
+    <section id="pricing" class="pricing-section" data-scroll-section>
+        <div class="container">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>STANDARD</h3>
+                    <div class="price">€220</div>
+                    <ul>
+                        <li>30ml Eau de Parfum</li>
+                        <li>Custom fragrance</li>
+                        <li>Photo label</li>
+                        <li>Gift box</li>
+                    </ul>
+                    <button class="btn-primary full-width">Create</button>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>GIFT SET</h3>
+                    <div class="price">€280</div>
+                    <ul>
+                        <li>Everything in Standard</li>
+                        <li>Premium larger box</li>
+                        <li>2× 2ml sample vials</li>
+                        <li>Story booklet</li>
+                    </ul>
+                    <button class="btn-primary full-width">Gift a Memory</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>REFILL</h3>
+                    <div class="price">€120</div>
+                    <ul>
+                        <li>Same custom formula</li>
+                        <li>Reuse your bottle</li>
+                        <li>Eco-friendly pouch</li>
+                        <li>Save 44% glass</li>
+                    </ul>
+                    <button class="btn-secondary full-width">Order Refill</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FINAL CTA SECTION -->
+    <section id="cta" class="cta-section gold-bg" data-scroll-section>
+        <div class="container centered-content">
+            <h2 class="display-large">Your Story, Your Signature Scent</h2>
+            <p class="subhead-large">Every memory deserves to be preserved. Start your journey.</p>
+            <button class="btn-black">CREATE YOUR MEMOIR</button>
+            <p class="footer-sign">by L'Oréal Luxe</p>
+        </div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <footer class="main-footer" data-scroll-section>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ABOUT</h4>
+                    <ul>
+                        <li>Our Story</li>
+                        <li>Master Perfumers</li>
+                        <li>Sustainability</li>
+                        <li>Press & Media</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li>FAQ</li>
+                        <li>Shipping & Delivery</li>
+                        <li>Returns & Exchanges</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONNECT</h4>
+                    <ul>
+                        <li>hello@memoir-fragrance.com</li>
+                        <li>Instagram: @memoir</li>
+                        <li>Join Waitlist</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MEMOIR by L'Oréal Luxe. All rights reserved. Made with ❤️ in France</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    
+    <script src="js/three-scene.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
