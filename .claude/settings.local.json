@@ -6,7 +6,30 @@
       "Bash(pip install:*)",
       "Bash(python split_pdfs.py:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh auth:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(start index.html)",
+      "Bash(start \"\" \"c:\\\\Udbhav Github\\\\Loreal Brandstorm\\\\index.html\")",
+      "Bash(ls:*)",
+      "Bash(python convert_docs_to_html.py:*)",
+      "Bash(python integrate_content.py:*)",
+      "Bash(git remote:*)",
+      "Bash(start https://github.com/udbhav25kansal/Loreal-Brandstorm/settings/pages)",
+      "Bash(start https://github.com/udbhav25kansal/Loreal-Brandstorm/deployments)",
+      "WebFetch(domain:udbhav25kansal.github.io)",
+      "Bash(start https://udbhav25kansal.github.io/Loreal-Brandstorm/)",
+      "WebSearch",
+      "WebFetch(domain:www.fragrantica.com)",
+      "Bash(python convert_memoir_docs.py:*)",
+      "Bash(python:*)",
+      "Bash(for doc in doc14 doc15 doc16 doc17 doc18 doc19 doc20 doc21 doc22 doc23)",
+      "Bash(do echo -n \"$doc: \")",
+      "Bash(done)",
+      "WebFetch(domain:ai.google.dev)"
     ]
   }
 }
