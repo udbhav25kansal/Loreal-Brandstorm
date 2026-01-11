@@ -68,6 +68,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Hero CTA - scroll to pricing section
+    const heroCta = document.getElementById('hero-cta');
+    if (heroCta) {
+        heroCta.addEventListener('click', () => {
+            const pricingSection = document.getElementById('pricing');
+            if (pricingSection) {
+                scroll.scrollTo(pricingSection);
+            }
+        });
+    }
+
     // Gallery Modal (Simplified for prototype)
     const galleryItems = document.querySelectorAll('.gallery-item');
     galleryItems.forEach(item => {

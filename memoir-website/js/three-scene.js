@@ -6,6 +6,13 @@
 class MemoirScene {
     constructor() {
         this.container = document.getElementById('canvas-container');
+        
+        // Validate container exists before proceeding
+        if (!this.container) {
+            console.warn('MemoirScene: canvas-container element not found');
+            return;
+        }
+        
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
