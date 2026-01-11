@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMOIR Visual Identity Mockup - L'Oréal Brandstorm 2026</title>
+    <style>
+        /* CSS Variables - Brand Colors */
+        :root {
+            --black: #000000;
+            --gold: #D4AF37;
+            --cream: #F7F4ED;
+            --charcoal: #333333;
+            --gray-dark: #6B6B6B;
+            --gray-medium: #9B9B9B;
+            --gray-light: #D1D1D1;
+            --white: #FFFFFF;
+
+            /* Olfactive Family Colors */
+            --aquatic: #1E3A5F;
+            --floral: #F4C2D4;
+            --woody: #8B5A3C;
+            --gourmand: #C88D5C;
+            --green: #7A9B76;
+            --atmospheric: #B8B8C8;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Futura', 'Avenir Next', 'Trebuchet MS', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.8em;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 1em;
+        }
+
+        /* Layout Containers */
+        .hero {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 6em 2em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo-primary {
+            font-size: 4em;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .logo-underline {
+            width: 80%;
+            height: 3px;
+            background: var(--gold);
+            margin: 0 auto 0.5em;
+        }
+
+        .logo-subtext {
+            font-size: 1.2em;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: var(--gray-medium);
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            font-style: italic;
+            margin-top: 2em;
+            color: var(--gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4em 2em;
+        }
+
+        .section {
+            margin-bottom: 4em;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3em;
+            padding-bottom: 1em;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        /* Color Palette Display */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2em;
+            margin-top: 2em;
+        }
+
+        .color-swatch {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 100%;
+            height: 120px;
+            border-radius: 8px;
+            margin-bottom: 1em;
+            border: 2px solid var(--gray-light);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .color-name {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3em;
+        }
+
+        .color-code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: var(--gray-dark);
+        }
+
+        /* Typography Display */
+        .type-sample {
+            background: var(--white);
+            padding: 2em;
+            margin-bottom: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .type-display-1 {
+            font-size: 3em;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+        }
+
+        .type-display-2 {
+            font-size: 2em;
+            font-weight: 500;
+            margin-bottom: 0.5em;
+        }
+
+        .type-body {
+            font-size: 1em;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .type-accent {
+            font-family: 'Optima', 'Palatino', Georgia, serif;
+            font-style: italic;
+            font-size: 1.2em;
+            color: var(--gray-dark);
+        }
+
+        /* Bottle Design Mockup */
+        .bottle-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4em 0;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            border-radius: 12px;
+        }
+
+        .bottle {
+            position: relative;
+            width: 140px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bottle-cap {
+            width: 100px;
+            height: 60px;
+            background: linear-gradient(180deg, #2a2a2a 0%, #000000 100%);
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .bottle-glass {
+            width: 140px;
+            height: 290px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+            border: 3px solid rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            position: relative;
+            box-shadow:
+                inset 0 0 20px rgba(255,255,255,0.8),
+                0 8px 24px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .bottle-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 140px;
+            background: linear-gradient(135deg, #e8e1d5 0%, #f5f0e8 100%);
+            border: 3px solid var(--gold);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .label-photo-placeholder {
+            width: 80px;
+            height: 100px;
+            background: linear-gradient(135deg, #87CEEB 0%, #F4A460 100%);
+            border-radius: 2px;
+            margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6em;
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .label-text {
+            font-size: 0.6em;
+            text-align: center;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .bottle-liquid {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70%;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.6) 0%, rgba(212, 175, 55, 0.8) 100%);
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* Packaging Mockup */
+        .packaging-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3em;
+            margin-top: 2em;
+        }
+
+        .box-mockup {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            padding: 3em;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .box-logo {
+            font-size: 1.5em;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.3em;
+            text-transform: uppercase;
+        }
+
+        .box-underline {
+            width: 60%;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 0.5em;
+        }
+
+        .box-subtext {
+            font-size: 0.8em;
+            color: var(--gray-medium);
+            letter-spacing: 0.1em;
+        }
+
+        .box-interior {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 100%);
+            padding: 2em;
+            margin-top: 2em;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        /* Website Mockup */
+        .website-mockup {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .website-header {
+            background: var(--black);
+            padding: 1.5em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .website-logo {
+            color: var(--white);
+            font-size: 1.2em;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+        }
+
+        .website-nav {
+            display: flex;
+            gap: 2em;
+        }
+
+        .website-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .website-nav a:hover {
+            color: var(--gold);
+        }
+
+        .website-hero {
+            background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+            color: var(--white);
+            padding: 4em 2em;
+            text-align: center;
+        }
+
+        .website-hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .website-hero p {
+            font-size: 1.2em;
+            margin-bottom: 2em;
+            color: var(--gray-light);
+        }
+
+        .cta-button {
+            background: var(--gold);
+            color: var(--black);
+            padding: 1em 2.5em;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .website-content {
+            padding: 3em 2em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+            margin-top: 2em;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2em;
+            background: var(--cream);
+            border-radius: 8px;
+        }
+
+        .feature-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 0 auto 1em;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        .feature-card p {
+            font-size: 0.95em;
+            color: var(--gray-dark);
+        }
+
+        /* App Mockup */
+        .app-mockup {
+            background: var(--white);
+            border-radius: 20px;
+            width: 375px;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            border: 8px solid var(--black);
+        }
+
+        .app-screen {
+            padding: 2em 1.5em;
+        }
+
+        .app-header {
+            text-align: center;
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .app-logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.3em;
+        }
+
+        .app-content {
+            text-align: center;
+        }
+
+        .upload-area {
+            background: var(--cream);
+            border: 3px dashed var(--gold);
+            border-radius: 12px;
+            padding: 3em 2em;
+            margin-bottom: 2em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .upload-area:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--charcoal);
+        }
+
+        .upload-icon {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        .app-button {
+            background: var(--black);
+            color: var(--white);
+            padding: 1em 2em;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 1em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .app-button:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo-primary {
+                font-size: 2.5em;
+            }
+
+            .packaging-showcase,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .website-nav {
+                display: none;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2em;
+        }
+
+        .mt-4 {
+            margin-top: 4em;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .black-bg {
+            background: var(--black);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section with Primary Logo -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-primary">MEMOIR</div>
+            <div class="logo-underline"></div>
+            <div class="logo-subtext">by L'Oréal Luxe</div>
+            <div class="tagline">Every Memory Deserves a Scent</div>
+        </div>
+    </section>
+
+    <!-- Color Palette Section -->
+    <div class="container">
+        <section class="section">
+            <div class="section-header">
+                <h2>Brand Color Palette</h2>
+                <p>Sophisticated, timeless, and emotionally warm</p>
+            </div>
+
+            <h3>Primary Colors</h3>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--black);"></div>
+                    <div class="color-name">Black</div>
+                    <div class="color-code">#000000</div>
+                    <p style="font-size: 0.85em; margin-top: 0.5em;">Luxury, sophistication</p>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--gold);"></div>
+                    <div class="color-name">Gold</div>
+                    <div class="color-code">#D4AF37</div>
+                    <p style="font-size: 0.85em; margin-top: 0.5em;">Warmth, memory</p>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--cream); border: 2px solid var(--gray-light);"></div>
+                    <div class="color-name">Cream</div>
+                    <div class="color-code">#F7F4ED</div>
+                    <p style="font-size: 0.85em; margin-top: 0.5em;">Soft, olfactive warmth</p>
+                </div>
+            </div>
+
+            <h3 class="mt-4">Olfactive Family Colors</h3>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--aquatic);"></div>
+                    <div class="color-name">Aquatic</div>
+                    <div class="color-code">#1E3A5F</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--floral);"></div>
+                    <div class="color-name">Floral</div>
+                    <div class="color-code">#F4C2D4</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--woody);"></div>
+                    <div class="color-name">Woody</div>
+                    <div class="color-code">#8B5A3C</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--gourmand);"></div>
+                    <div class="color-name">Gourmand</div>
+                    <div class="color-code">#C88D5C</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--green);"></div>
+                    <div class="color-name">Green</div>
+                    <div class="color-code">#7A9B76</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: var(--atmospheric);"></div>
+                    <div class="color-name">Atmospheric</div>
+                    <div class="color-code">#B8B8C8</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Typography System</h2>
+                <p>Clean, modern, and effortlessly elegant</p>
+            </div>
+
+            <div class="type-sample">
+                <div class="type-display-1">MEMOIR by L'Oréal Luxe</div>
+                <p style="font-size: 0.9em; color: var(--gray-dark); margin-bottom: 2em;">Display 1 - Futura Bold, 48px, Uppercase, Letter-spacing +100</p>
+
+                <div class="type-display-2">Every Memory Deserves a Scent</div>
+                <p style="font-size: 0.9em; color: var(--gray-dark); margin-bottom: 2em;">Headline - Futura Medium, 36px</p>
+
+                <div class="type-body">
+                    Your favorite photo becomes a custom luxury fragrance. Upload a memory, and our AI analyzes the visual elements—beach sunsets, blooming gardens, childhood kitchens—and translates them into olfactive notes. A master perfumer then crafts your formula using exclusive L'Oréal accords.
+                </div>
+                <p style="font-size: 0.9em; color: var(--gray-dark); margin-bottom: 2em;">Body Text - Avenir Book, 16px, Line-height 1.6</p>
+
+                <div class="type-accent">
+                    "Your Maui memory reminded me of plumeria blooms at sunset. May this scent bring you back to that perfect moment." — Sophie Laurent, Master Perfumer
+                </div>
+                <p style="font-size: 0.9em; color: var(--gray-dark);">Accent - Optima Italic, 20px (Perfumer signatures)</p>
+            </div>
+        </section>
+
+        <!-- Bottle Design Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Bottle Design</h2>
+                <p>Clear glass, matte black cap, with your photo on the label</p>
+            </div>
+
+            <div class="bottle-showcase">
+                <div class="bottle">
+                    <div class="bottle-cap">MEMOIR</div>
+                    <div class="bottle-glass">
+                        <div class="bottle-liquid"></div>
+                        <div class="bottle-label">
+                            <div class="label-photo-placeholder">
+                                YOUR<br>MEMORY<br>PHOTO
+                            </div>
+                            <div class="label-text">Maui, June 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2em;">
+                <p><strong>Specifications:</strong></p>
+                <p>30ml Eau de Parfum | Clear flint glass | Matte black aluminum cap with gold band</p>
+                <p>Custom photo label with resin overlay | Height: 11cm | Weight: 180g</p>
+            </div>
+        </section>
+
+        <!-- Packaging Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Packaging Design</h2>
+                <p>Premium rigid box with magnetic closure and gold satin lining</p>
+            </div>
+
+            <div class="packaging-showcase">
+                <div class="box-mockup">
+                    <div class="box-logo">MEMOIR</div>
+                    <div class="box-underline"></div>
+                    <div class="box-subtext">by L'Oréal Luxe</div>
+                    <div class="box-interior">
+                        <p style="font-size: 0.9em; margin-bottom: 1em;"><strong>What's Inside:</strong></p>
+                        <ul style="list-style: none; font-size: 0.85em; line-height: 1.8;">
+                            <li>✦ 30ml Custom Fragrance Bottle</li>
+                            <li>✦ Frameable Memory Card</li>
+                            <li>✦ 2ml Sample Vial</li>
+                            <li>✦ Fragrance Story Booklet</li>
+                            <li>✦ Perfumer's Personal Note</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: var(--white); padding: 2em; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 1em;">Unboxing Experience</h3>
+                    <ol style="line-height: 2; font-size: 0.95em;">
+                        <li>Lift magnetic lid (satisfying click)</li>
+                        <li>See gold satin lining (luxury reveal)</li>
+                        <li>Remove memory card (frameable photo)</li>
+                        <li>Discover bottle with YOUR photo on label</li>
+                        <li>Find sample vial (try before opening)</li>
+                        <li>Read fragrance story booklet</li>
+                    </ol>
+                    <p style="margin-top: 1.5em; font-style: italic; color: var(--gray-dark);">Every detail designed for emotional impact and social sharing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Website Mockup Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Website Design</h2>
+                <p>Visual-first, storytelling-driven, elegant minimalism</p>
+            </div>
+
+            <div class="website-mockup">
+                <div class="website-header">
+                    <div class="website-logo">MEMOIR</div>
+                    <nav class="website-nav">
+                        <a href="#">CREATE</a>
+                        <a href="#">GALLERY</a>
+                        <a href="#">ABOUT</a>
+                        <a href="#">SHOP</a>
+                    </nav>
+                </div>
+
+                <div class="website-hero">
+                    <h1>Every Memory Deserves a Scent</h1>
+                    <p>Turn your favorite photo into a custom luxury fragrance</p>
+                    <button class="cta-button">Create Your MEMOIR</button>
+                </div>
+
+                <div class="website-content">
+                    <h2 class="text-center mb-2">How MEMOIR Works</h2>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-number">1</div>
+                            <h3>Upload Photo</h3>
+                            <p>Share your favorite memory—beach vacation, wedding day, grandmother's garden, childhood moment</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">2</div>
+                            <h3>AI Creates Formula</h3>
+                            <p>Our proprietary AI analyzes visual elements and translates them into olfactive notes</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">3</div>
+                            <h3>Receive Fragrance</h3>
+                            <p>Master perfumer crafts your custom blend. Delivered in 2-3 weeks with your photo on the bottle</p>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 3em;">
+                        <p style="font-size: 1.1em; color: var(--gray-dark);">2,847 memories bottled and counting</p>
+                        <button class="cta-button" style="margin-top: 1.5em;">Explore Memory Gallery</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile App Mockup Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Mobile App Interface</h2>
+                <p>Optimized for photo upload and seamless creation flow</p>
+            </div>
+
+            <div class="app-mockup">
+                <div class="app-screen">
+                    <div class="app-header">
+                        <div class="app-logo">MEMOIR</div>
+                        <p style="font-size: 0.8em; color: var(--gray-dark);">Create Your Custom Fragrance</p>
+                    </div>
+
+                    <div class="app-content">
+                        <div class="upload-area">
+                            <div class="upload-icon">📷</div>
+                            <p style="font-weight: 600; margin-bottom: 0.5em;">Drag & Drop Photo</p>
+                            <p style="font-size: 0.85em; color: var(--gray-dark);">or tap to browse</p>
+                        </div>
+
+                        <p style="margin-bottom: 1.5em; color: var(--gray-dark); font-size: 0.9em;">
+                            Upload from camera roll, Instagram, or Google Photos
+                        </p>
+
+                        <button class="app-button">+ Create New MEMOIR</button>
+
+                        <div style="margin-top: 2em; padding-top: 2em; border-top: 1px solid var(--gray-light);">
+                            <h3 style="font-size: 1em; margin-bottom: 1em; text-align: left;">Your MEMOIRs</h3>
+                            <div style="background: var(--cream); padding: 1em; border-radius: 8px; text-align: left;">
+                                <p style="font-weight: 600; margin-bottom: 0.3em;">Maui Honeymoon</p>
+                                <p style="font-size: 0.85em; color: var(--gray-dark); margin-bottom: 0.5em;">June 2024</p>
+                                <button style="background: var(--gold); color: var(--black); padding: 0.5em 1em; border: none; border-radius: 4px; font-weight: 600; cursor: pointer;">Reorder €120</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 2em; font-size: 0.95em; color: var(--gray-dark);">
+                <strong>Features:</strong> Camera integration | Instagram import | Push notifications | Order tracking | Refill reminders
+            </p>
+        </section>
+
+        <!-- Brand Application Examples -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Brand Applications</h2>
+                <p>Consistent visual identity across all touchpoints</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2em;">
+                <!-- Instagram Post Template -->
+                <div style="background: var(--white); padding: 1.5em; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 1.1em; margin-bottom: 1em;">Instagram Post</h3>
+                    <div style="background: linear-gradient(135deg, #87CEEB 0%, #F4A460 100%); aspect-ratio: 1; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; text-align: center; padding: 1em;">
+                        User's Memory Photo<br>(Background)
+                    </div>
+                    <div style="margin-top: 1em; font-size: 0.9em;">
+                        <p style="font-weight: 600;">Maui, June 2024</p>
+                        <p style="color: var(--gray-dark); font-size: 0.85em;">Now a MEMOIR</p>
+                        <p style="margin-top: 0.5em; font-size: 0.8em;">#MEMOIRfragrance #CustomPerfume</p>
+                    </div>
+                </div>
+
+                <!-- Business Card -->
+                <div style="background: var(--black); color: var(--white); padding: 2em; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    <h3 style="font-size: 1.1em; margin-bottom: 1.5em; color: var(--white);">Business Card</h3>
+                    <div class="logo-primary" style="font-size: 1.5em; margin-bottom: 0.2em;">MEMOIR</div>
+                    <div class="logo-underline" style="width: 60%; margin-bottom: 0.5em;"></div>
+                    <div class="logo-subtext" style="font-size: 0.8em;">by L'Oréal Luxe</div>
+                    <div style="margin-top: 2em; font-size: 0.85em; line-height: 1.8;">
+                        <p>MEMOIR.com</p>
+                        <p>contact@memoir.com</p>
+                        <p>Paris | New York | London</p>
+                    </div>
+                </div>
+
+                <!-- Gift Tag -->
+                <div style="background: var(--cream); padding: 2em; border-radius: 8px; border: 3px solid var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 1.1em; margin-bottom: 1em;">Gift Tag</h3>
+                    <div style="text-align: center; padding: 1.5em;">
+                        <div style="font-size: 1.3em; font-weight: 700; letter-spacing: 0.15em; margin-bottom: 0.5em;">MEMOIR</div>
+                        <div style="width: 50%; height: 2px; background: var(--gold); margin: 0 auto 1em;"></div>
+                        <p style="font-style: italic; font-size: 0.9em; color: var(--gray-dark);">Every Memory Deserves a Scent</p>
+                        <div style="margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--gray-light); font-size: 0.85em;">
+                            <p>To: _____________</p>
+                            <p>From: ___________</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="section" style="background: var(--black); color: var(--white); padding: 4em 2em; border-radius: 12px; margin-top: 4em;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="color: var(--gold);">Brand Identity Summary</h2>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-top: 1.5em;">
+                    MEMOIR's visual identity balances modern sophistication with emotional warmth. Black and gold create timeless luxury, while the user's photo brings personal meaning to every bottle. From the matte-touch packaging to the seamless digital experience, every touchpoint reinforces our promise:
+                </p>
+                <p style="font-size: 1.5em; font-style: italic; color: var(--gold); margin-top: 2em; line-height: 1.6;">
+                    "Where technology meets memory, science serves emotion, and your story becomes your signature scent."
+                </p>
+                <button class="cta-button" style="margin-top: 3em;">View Complete Brand Guidelines</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--charcoal); color: var(--white); padding: 3em 2em; text-align: center;">
+        <div style="font-size: 1.5em; font-weight: 700; letter-spacing: 0.15em; margin-bottom: 0.5em;">MEMOIR</div>
+        <p style="color: var(--gray-light); margin-bottom: 1em;">by L'Oréal Luxe</p>
+        <p style="font-size: 0.9em; color: var(--gray-light);">
+            Visual Identity Mockup | L'Oréal Brandstorm 2026
+        </p>
+        <p style="font-size: 0.85em; color: var(--gray-medium); margin-top: 2em;">
+            © 2026 L'Oréal Luxe. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
